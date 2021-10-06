@@ -1,0 +1,38 @@
+{
+    "name": "vscode-wpcs-whitelist-flags",
+    "displayName": "WPCS Whitelist Flags v2",
+    "description": "Add WordPress Coding Standards whitelist flags to your code.",
+    "version": "1.0.0",
+    "publisher": "vijayhardaha",
+    "author": {
+        "name": "Vijay Hardaha"
+    },
+    "license": "GPLv3",
+    "homepage": "https://github.com/vijayhardaha/vscode-wpcs-whitelist-flags",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vijayhardaha/vscode-wpcs-whitelist-flags"
+    },
+    "bugs": {
+        "url": "https://github.com/vijayhardaha/vscode-wpcs-whitelist-flags/issues"
+    },
+    "icon": "icon.png",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "keywords": [
+        "php",
+        "wordpress"
+    ],
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
