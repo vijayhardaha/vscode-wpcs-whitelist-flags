@@ -16,7 +16,7 @@
     },
     "WPCS: input var ok": {
         "prefix": "wpcs_input_var",
-        "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
+        "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput",
         "description": "Allow use of superglobal"
     },
     "WPCS: loose comparison ok": {
