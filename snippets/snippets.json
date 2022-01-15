@@ -6,7 +6,7 @@
     },
     "WPCS: CSRF ok": {
         "prefix": "wpcs_csrf",
-        "body": "// phpcs:ignore WordPress.Security.NonceVerification",
+        "body": "// phpcs:ignore WordPress.Security.NonceVerification.Missing",
         "description": "No need for nonce verification/CSRF"
     },
     "WPCS: db call ok": {
@@ -14,10 +14,20 @@
         "body": "// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery",
         "description": "Allow direct database query"
     },
+    "WPCS: function name ok": {
+        "prefix": "wpcs_function_name",
+        "body": "// // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid",
+        "description": "Allow invalid function name."
+    },
+    "WPCS: ignore ok": {
+        "prefix": "wpcs_ignore",
+        "body": "// phpcs:ignore",
+        "description": "Ignore PHPCS"
+    },
     "WPCS: input var ok": {
         "prefix": "wpcs_input_var",
-        "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput",
-        "description": "Allow use of superglobal"
+        "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
+        "description": "Allow use of non validated input"
     },
     "WPCS: loose comparison ok": {
         "prefix": "wpcs_loose_comparison",
@@ -26,7 +36,7 @@
     },
     "WPCS: override ok": {
         "prefix": "wpcs_override",
-        "body": "// phpcs:ignore WordPress.WP.GlobalVariablesOverride",
+        "body": "// phpcs:ignore WordPress.WP.GlobalVariablesOverrid",
         "description": "Allow override WordPress globals"
     },
     "WPCS: precision alignment ok": {
@@ -40,14 +50,14 @@
         "description": "Allow non-prefixed function/class/variable/constant in the global namespace"
     },
     "WPCS: PreparedSQLPlaceholders replacement count ok": {
-        "prefix": "wpcs_preparedsql",
-        "body": "// WPCS: PreparedSQLPlaceholders replacement count ok.",
+        "prefix": "wpcs_preparedsqlplaceholders",
+        "body": "// phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.",
         "description": "Allow preparedSQL placeholders vs replacements"
     },
     "WPCS: sanitization ok": {
         "prefix": "wpcs_sanitization",
         "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-        "description": "Allow unsanitized code"
+        "description": "Allow use of non sanitized input"
     },
     "WPCS: slow query ok": {
         "prefix": "wpcs_slow_query",
@@ -66,7 +76,7 @@
     },
     "WPCS: XSS ok": {
         "prefix": "wpcs_xss",
-        "body": "// phpcs:ignore WordPress.Security.EscapeOutput",
+        "body": "// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped",
         "description": "Allow unescaped code"
     }
 }
