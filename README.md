@@ -4,7 +4,7 @@ This extension for Visual Studio Code adds all [WordPress Coding Standards white
 
 Extension is originally developed by [Claudio Sanches](https://github.com/claudiosanches/vscode-wpcs-whitelist-flags) but there were some issues and extension wasn't being maintained to so I modified and fixed the issues.
 
-![Demo](images/demo.png)
+![WPCS Whitelist Flags Example](https://raw.githubusercontent.com/vijayhardaha/vscode-wpcs-whitelist-flags/master/images/demo.png)
 
 Originally Developed by [Claudio Sanches](https://github.com/claudiosanches/vscode-wpcs-whitelist-flags)
 
