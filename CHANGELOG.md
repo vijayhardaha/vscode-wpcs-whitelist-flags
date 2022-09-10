@@ -2,25 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+### 1.1.0 - Sep 10, 2022
 
-## [1.0.3] - 2022-01-15
+-   Add: Add `wpcs_csrf_recommended`
+-   Update: Change `WordPress.Sniffs.PrecisionAlignment` to `WordPress.WhiteSpace.PrecisionAlignment.Found`.
+-   Update: Change `WordPress.WP.CapitalPDangit` to `WordPress.WP.CapitalPDangit.Misspelled`.
+-   Update: Change `WordPress.WP.GlobalVariablesOverride` to `WordPress.WP.GlobalVariablesOverride.Prohibited`.
+-   Update: Change `wpcs_cache` to `wpcs_db_cache`.
+-   Update: Change `wpcs_csrf` to `wpcs_csrf_missing`.
+-   Update: Change `wpcs_function_name` to `wpcs_fn_name`.
+-   Update: Change `wpcs_preparedsqlplaceholders` to `wpcs_db_preparedsqlplaceholders`.
+-   Update: Change `wpcs_slow_query` to `wpcs_db_slow_query`.
+-   Update: Change `wpcs_unprepared_sql` to `wpcs_db_unprepared_sql`.
 
-### Fixed
+### 1.0.3 - Jan 15, 2022
 
--   Fixed some snippets
--   Change the order of snippets
--   Function name ok added.
+-   Fix: Fix some snippets.
+-   Update: Change the order of snippets.
+-   Add: Add function name ok snippet.
 
-## [1.0.2] - 2021-10-10
+### 1.0.2 - Oct 10, 2021
 
-### Fixed
+-   Fix: Fix "input var ok" snippet.
 
--   Snippet "input var ok" fixed
+### 1.0.0 - Oct 06, 2021
 
-## [1.0.0] - 2021-10-06
-
-### Added
-
--   14 snippets, including all flags from WPCS 2.0
+-   Initial release.
