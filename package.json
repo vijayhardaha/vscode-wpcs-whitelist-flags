@@ -2,7 +2,7 @@
 	"name": "vscode-wpcs-whitelist-flags",
 	"displayName": "WPCS Whitelist Flags V2",
 	"description": "Add WordPress Coding Standards whitelist flags to your code.",
-	"version": "1.0.3",
+	"version": "1.1.0",
 	"publisher": "vijayhardaha",
 	"author": {
 		"name": "Vijay Hardaha"
