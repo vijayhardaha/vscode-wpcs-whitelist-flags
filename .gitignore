@@ -1,2 +1,181 @@
 node_modules
+# =======================================================================
+# Git Ignore
+# =======================================================================
+# Purpose: Prevent build artifacts, local config, and sensitive
+#          credentials from entering version control.
+# Scope:   Next.js, Svelte, WordPress — npm, pnpm, yarn, bun.
+# Docs:    https://git-scm.com/docs/gitignore
+# =======================================================================
+
+# ----------------------------------------------------------------------
+# Dependency Managers (Node)
+# ----------------------------------------------------------------------
+# Large binary folders and lockfile caches.
+node_modules/
+.pnp/
+.pnp.*
 *.vsix
+
+# Yarn 2+ Zero-Installs
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Bun
+.bun/
+
+# ----------------------------------------------------------------------
+# Dependencies (Php)
+# ----------------------------------------------------------------------
+# Composer dependencies for WordPress / Laravel projects.
+vendor/
+languages/
+
+# ----------------------------------------------------------------------
+# Secrets & Credentials
+# ----------------------------------------------------------------------
+# WARNING: Do not remove these unless you have an encryption layer.
+.env
+.env.*
+!.env.example
+*.pem
+
+# ----------------------------------------------------------------------
+# Build & Compilation Output
+# ----------------------------------------------------------------------
+# Next.js / React
+.next/
+out/
+
+# Svelte
+.svelte-kit/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Bundler output
+dist/
+build/
+
+# ----------------------------------------------------------------------
+# Cache Directories
+# ----------------------------------------------------------------------
+# Vite / Vitest
+.vite/
+
+# Turborepo
+.turbo/
+
+# Esbuild / tsdown
+.cache/
+
+# Linter / Formatter caches
+.eslintcache
+.stylelintcache
+
+# Phpcs
+.phpcs-cache
+
+# ----------------------------------------------------------------------
+# Testing & Coverage
+# ----------------------------------------------------------------------
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Jest
+.jest/
+
+# Vitest
+vitest-results/
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+
+# ----------------------------------------------------------------------
+# Editor & Ide Settings
+# ----------------------------------------------------------------------
+# These are developer-specific, not project-specific.
+# .vscode/
+.vscode-insiders/
+.idea/
+*.swp
+*.swo
+
+# ----------------------------------------------------------------------
+# System & Os Junk
+# ----------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+# *~
+
+# ----------------------------------------------------------------------
+# Deployment (Platform-Specific)
+# ----------------------------------------------------------------------
+# Vercel
+.vercel/
+
+# Netlify
+.netlify/
+
+# Cloudflare
+.wrangler/
+
+# ----------------------------------------------------------------------
+# Seo & Generated Data
+# ----------------------------------------------------------------------
+# Auto-generated files that don't need version control.
+/public/robots.txt
+/public/sitemap*
+*sitemap*.xml
+
+# ----------------------------------------------------------------------
+# Temporary Files
+# ----------------------------------------------------------------------
+# Scratch data, prepared commands, local workflow artifacts.
+.tmp/
+tmp/
+
+# ----------------------------------------------------------------------
+# Ai Coding Tools
+# ----------------------------------------------------------------------
+# Local state, conversation history, and caches from AI agents.
+.claude/
+.codex/
+.copilot/
+.deepseek/
+.droid/
+.fallow/
+.gemini/
+.kilo/
+.kilocode/
+.mistral/
+.opencode/
+.qoder/
+.qwen/
+.vibe/
+
+# ----------------------------------------------------------------------
+# Ai Instruction Files (Track These)
+# ----------------------------------------------------------------------
+# Project-level instruction files should be COMMITTED, not ignored.
+# CLAUDE.md, AGENTS.md, .cursorrules, .kilocode/, .qoder/ (config only)
+# Do NOT add these to .gitignore.
