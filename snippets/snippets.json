@@ -1,4 +1,9 @@
 {
+  "WPCS: Ignore ok": {
+    "prefix": "wpcs_ignore",
+    "body": "// phpcs:ignore",
+    "description": "Ignore all phpcs rules."
+  },
   "WPCS: CSRF missing ok": {
     "prefix": "wpcs_csrf_missing",
     "body": "// phpcs:ignore WordPress.Security.NonceVerification.Missing",
@@ -8,6 +13,36 @@
     "prefix": "wpcs_csrf_recommended",
     "body": "// phpcs:ignore WordPress.Security.NonceVerification.Recommended",
     "description": "No need for nonce verification/CSRF."
+  },
+  "WPCS: Input validation ok": {
+    "prefix": "wpcs_input_var",
+    "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
+    "description": "Allow use of non-validated input."
+  },
+  "WPCS: Input sanitization ok": {
+    "prefix": "wpcs_sanitization",
+    "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
+    "description": "Allow use of non-sanitized input."
+  },
+  "WPCS: Input unslash ok": {
+    "prefix": "wpcs_unslash",
+    "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
+    "description": "Allow use of unslashed input."
+  },
+  "WPCS: XSS ok": {
+    "prefix": "wpcs_xss",
+    "body": "// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped",
+    "description": "Allow unescaped code."
+  },
+  "WPCS: Escape output ok": {
+    "prefix": "wpcs_escape",
+    "body": "// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped",
+    "description": "Allow unescaped code."
+  },
+  "WPCS: Safe redirect ok": {
+    "prefix": "wpcs_safe_redirect",
+    "body": "// phpcs:ignore WordPress.Security.SafeRedirect",
+    "description": "Allow use of wp_redirect() instead of wp_safe_redirect()."
   },
   "WPCS: DB cache ok": {
     "prefix": "wpcs_db_cache",
@@ -34,59 +69,84 @@
     "body": "// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared",
     "description": "Allow unprepared SQL query."
   },
-  "WPCS: Ignore ok": {
-    "prefix": "wpcs_ignore",
-    "body": "// phpcs:ignore",
-    "description": "Ignore all phpcs rules."
-  },
-  "WPCS: Input sanitization ok": {
-    "prefix": "wpcs_sanitization",
-    "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-    "description": "Allow use of non-sanitized input."
-  },
-  "WPCS: Input unslash ok": {
-    "prefix": "wpcs_unslash",
-    "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-    "description": "Allow use of unslashed input."
-  },
-  "WPCS: Input validation ok": {
-    "prefix": "wpcs_input_var",
-    "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
-    "description": "Allow use of non-validated input."
+  "WPCS: Prefix ok": {
+    "prefix": "wpcs_prefix",
+    "body": "// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals",
+    "description": "Allow non-prefixed function/class/variable/constant in the global namespace."
   },
   "WPCS: Invalid function name ok": {
     "prefix": "wpcs_fn_name",
     "body": "// phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid",
     "description": "Allow invalid function name."
   },
+  "WPCS: Method name ok": {
+    "prefix": "wpcs_method_name",
+    "body": "// phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid",
+    "description": "Allow invalid class method names."
+  },
+  "WPCS: Variable snake case ok": {
+    "prefix": "wpcs_var_snake",
+    "body": "// phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase",
+    "description": "Allow variable names not in snake_case"
+  },
+  "WPCS: Property snake case ok": {
+    "prefix": "wpcs_prop_snake",
+    "body": "// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase",
+    "description": "Allow property names not in snake_case"
+  },
+  "WPCS: Hook underscore ok": {
+    "prefix": "wpcs_hook_underscore",
+    "body": "// phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores",
+    "description": "Allow hook names without underscores"
+  },
   "WPCS: Loose comparison ok": {
     "prefix": "wpcs_loose_comparison",
-    "body": "// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison",
+    "body": "// phpcs:ignore Universal.Operators.StrictComparisons.LooseComparison",
     "description": "Allow loose comparison"
+  },
+  "WPCS: Non-yoda ok": {
+    "prefix": "wpcs_non_yoda",
+    "body": "// phpcs:ignore WordPress.PHP.YodaConditions.NotYoda",
+    "description": "Allow non-Yoda conditions"
+  },
+  "WPCS: Loose equal ok": {
+    "prefix": "wpcs_loose_equal",
+    "body": "// phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual",
+    "description": "Allow loose equality (==)"
+  },
+  "WPCS: Dev functions ok": {
+    "prefix": "wpcs_dev_functions",
+    "body": "// phpcs:ignore WordPress.PHP.DevelopmentFunctions",
+    "description": "Allow use of debugging functions like var_dump, die, exit."
+  },
+  "WPCS: Commented code ok": {
+    "prefix": "wpcs_commented_code",
+    "body": "// phpcs:ignore WordPress.PHP.CommentedOutCode",
+    "description": "Allow commented out code blocks."
   },
   "WPCS: Override ok": {
     "prefix": "wpcs_override",
     "body": "// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited",
     "description": "Allow override WordPress globals."
   },
-  "WPCS: Precision alignment ok": {
-    "prefix": "wpcs_precision_alignment",
-    "body": "// phpcs:ignore WordPress.WhiteSpace.PrecisionAlignment.Found",
-    "description": "Ignore precision alignment."
-  },
-  "WPCS: Prefix ok": {
-    "prefix": "wpcs_prefix",
-    "body": "// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals",
-    "description": "Allow non-prefixed function/class/variable/constant in the global namespace."
-  },
   "WPCS: Spelling ok": {
     "prefix": "wpcs_spelling",
-    "body": "// phpcs:ignore: WordPress.WP.CapitalPDangit.Misspelled",
-    "description": "Allow incorrect 'WordPress' spelling."
+    "body": "// phpcs:ignore WordPress.WP.CapitalPDangit.MisspelledInText",
+    "description": "Allow incorrect 'WordPress' spelling in text."
   },
-  "WPCS: XSS ok": {
-    "prefix": "wpcs_xss",
-    "body": "// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped",
-    "description": "Allow unescaped code."
+  "WPCS: I18n text domain ok": {
+    "prefix": "wpcs_textdomain",
+    "body": "// phpcs:ignore WordPress.WP.I18n.TextDomainMissing",
+    "description": "Allow translation functions without text domain."
+  },
+  "WPCS: File name ok": {
+    "prefix": "wpcs_file_name",
+    "body": "// phpcs:ignore WordPress.Files.FileName.NotHyphenatedLowercase",
+    "description": "Allow non-standard file names."
+  },
+  "WPCS: Precision alignment ok": {
+    "prefix": "wpcs_precision_alignment",
+    "body": "// phpcs:ignore Universal.WhiteSpace.PrecisionAlignment.Found",
+    "description": "Ignore precision alignment."
   }
 }
