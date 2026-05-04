@@ -124,6 +124,11 @@
     "body": "// phpcs:ignore WordPress.PHP.CommentedOutCode",
     "description": "Allow commented out code blocks."
   },
+  "WPCS: Unused parameter ok": {
+    "prefix": "wpcs_unused_param",
+    "body": "// phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found",
+    "description": "Allow unused function parameters."
+  },
   "WPCS: Override ok": {
     "prefix": "wpcs_override",
     "body": "// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited",
