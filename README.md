@@ -1,4 +1,4 @@
-# WordPress Coding Standards (WPCS) Whitelist Flags — Version 2
+# WordPress Coding Standards (WPCS) Whitelist Flags — 2
 
 A Visual Studio Code extension that provides ready-to-use snippets for all [WordPress Coding Standards (WPCS)](https://github.com/WordPress/WordPress-Coding-Standards/wiki/) whitelist flags. Quickly insert `// phpcs:ignore` comments to exclude specific lines or rules from WPCS checks.
 
