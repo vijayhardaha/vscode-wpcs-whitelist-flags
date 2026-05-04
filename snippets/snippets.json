@@ -29,6 +29,11 @@
     "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
     "description": "Allow use of unslashed input."
   },
+  "WPCS: Input not validated nor sanitized ok": {
+    "prefix": "wpcs_input_nvs",
+    "body": "// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidatedNotSanitized",
+    "description": "Allow use of input that is neither validated nor sanitized."
+  },
   "WPCS: XSS ok": {
     "prefix": "wpcs_xss",
     "body": "// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped",
