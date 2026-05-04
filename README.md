@@ -10,13 +10,13 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
 
 ## Features
 
-- 30 pre-configured snippets covering common WPCS ignore rules
+- 31 pre-configured snippets covering common WPCS ignore rules
 - Groups snippets by category: Security, Database, Naming Conventions, PHP/Operators, WordPress Core
 - Zero setup required — install and start using immediately
 - Matches official WPCS whitelist flag syntax exactly
 - **Requires WordPressCS 3.0.0+** (from version 1.2.0 onwards)
 
-## What's New in 1.2.0
+## What's New in 1.2.0+
 
 ### Major Changes
 
@@ -39,6 +39,7 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
 - `wpcs_textdomain` — Missing translation text domains
 - `wpcs_file_name` — Non-standard file names
 - `wpcs_escape` — Alternative to `wpcs_xss`
+- `wpcs_unused_param` — Unused function parameters
 
 > [View full CHANGELOG](CHANGELOG.md) for complete version history.
 
@@ -310,6 +311,17 @@ Type the snippet prefix in any PHP file and select the snippet from IntelliSense
     // phpcs:ignore WordPress.PHP.CommentedOutCode
     // $old_code = 'deprecated';
     // $this->old_function();
+    ```
+
+- **WPCS: Unused parameter ok**
+  - Prefix: `wpcs_unused_param`
+  - Description: Allow unused function parameters.
+  - Ignore Rule: `// phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found`
+  - Example:
+    ```php
+    function my_function( $param1, $unused_param ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
+        return $param1;
+    }
     ```
 
 ### WordPress Core
