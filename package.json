@@ -2,7 +2,7 @@
   "name": "vscode-wpcs-whitelist-flags",
   "displayName": "WPCS Whitelist Flags — 2",
   "description": "A collection of 30+ snippets for WordPress Coding Standards (WPCS) whitelist flags. Quickly add // phpcs:ignore comments for security, database, naming conventions, and more. Compatible with WordPressCS 3.0.0+.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "vijayhardaha",
   "author": {
     "name": "Vijay Hardaha",
