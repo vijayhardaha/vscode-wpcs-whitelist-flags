@@ -10,7 +10,7 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
 
 ## Features
 
-- 31 pre-configured snippets covering common WPCS ignore rules
+- 32 pre-configured snippets covering common WPCS ignore rules
 - Groups snippets by category: Security, Database, Naming Conventions, PHP/Operators, WordPress Core
 - Zero setup required — install and start using immediately
 - Matches official WPCS whitelist flag syntax exactly
@@ -25,7 +25,17 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
   - `wpcs_precision_alignment` → `Universal.WhiteSpace.PrecisionAlignment.Found`
   - `wpcs_spelling` → `WordPress.WP.CapitalPDangit.MisspelledInText`
 
-### New Snippets (12 added)
+### New Snippets
+
+**Available in 1.2.2:**
+
+- `wpcs_input_nvs` — Input not validated nor sanitized
+
+**Available in 1.2.1:**
+
+- `wpcs_unused_param` — Unused function parameters
+
+**Available in 1.2.0:**
 
 - `wpcs_var_snake` — Non-snake_case variable names
 - `wpcs_prop_snake` — Non-snake_case property names
@@ -39,9 +49,45 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
 - `wpcs_textdomain` — Missing translation text domains
 - `wpcs_file_name` — Non-standard file names
 - `wpcs_escape` — Alternative to `wpcs_xss`
-- `wpcs_unused_param` — Unused function parameters
 
 > [View full CHANGELOG](CHANGELOG.md) for complete version history.
+
+## Snippet Overview
+
+| Snippet                           | Title                                                 | Description                                                                  | Category           |
+| --------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------ |
+| `wpcs_ignore`                     | WPCS: Ignore ok                                       | Ignore all phpcs rules.                                                      | General            |
+| `wpcs_csrf_missing`               | WPCS: CSRF missing ok                                 | No need for nonce verification/CSRF.                                         | Security           |
+| `wpcs_csrf_recommended`           | WPCS: CSRF recommended ok                             | No need for nonce verification/CSRF.                                         | Security           |
+| `wpcs_input_var`                  | WPCS: Input validation ok                             | Allow use of non-validated input.                                            | Security           |
+| `wpcs_sanitization`               | WPCS: Input sanitization ok                           | Allow use of non-sanitized input.                                            | Security           |
+| `wpcs_unslash`                    | WPCS: Input unslash ok                                | Allow use of unslashed input.                                                | Security           |
+| `wpcs_input_nvs`                  | WPCS: Input not validated nor sanitized ok            | Allow use of input that is neither validated nor sanitized.                  | Security           |
+| `wpcs_xss`                        | WPCS: XSS ok                                          | Allow unescaped code.                                                        | Security           |
+| `wpcs_escape`                     | WPCS: Escape output ok                                | Allow unescaped code.                                                        | Security           |
+| `wpcs_safe_redirect`              | WPCS: Safe redirect ok                                | Allow use of wp_redirect() instead of wp_safe_redirect().                    | Security           |
+| `wpcs_db_cache`                   | WPCS: DB cache ok                                     | Allow database query without caching.                                        | Database           |
+| `wpcs_db_call`                    | WPCS: DB direct call ok                               | Allow direct database query.                                                 | Database           |
+| `wpcs_db_preparedsqlplaceholders` | WPCS: DB preparedSQLPlaceholders replacement count ok | Allow preparedSQL placeholders vs replacements.                              | Database           |
+| `wpcs_db_slow_query`              | WPCS: DB slow query ok                                | Allow slow DB queries.                                                       | Database           |
+| `wpcs_db_unprepared_sql`          | WPCS: DB unprepared SQL ok                            | Allow unprepared SQL query.                                                  | Database           |
+| `wpcs_prefix`                     | WPCS: Prefix ok                                       | Allow non-prefixed function/class/variable/constant in the global namespace. | Naming Conventions |
+| `wpcs_fn_name`                    | WPCS: Invalid function name ok                        | Allow invalid function name.                                                 | Naming Conventions |
+| `wpcs_method_name`                | WPCS: Method name ok                                  | Allow invalid class method names.                                            | Naming Conventions |
+| `wpcs_var_snake`                  | WPCS: Variable snake case ok                          | Allow variable names not in snake_case                                       | Naming Conventions |
+| `wpcs_prop_snake`                 | WPCS: Property snake case ok                          | Allow property names not in snake_case                                       | Naming Conventions |
+| `wpcs_hook_underscore`            | WPCS: Hook underscore ok                              | Allow hook names without underscores                                         | Naming Conventions |
+| `wpcs_loose_comparison`           | WPCS: Loose comparison ok                             | Allow loose comparison                                                       | PHP & Operators    |
+| `wpcs_non_yoda`                   | WPCS: Non-yoda ok                                     | Allow non-Yoda conditions                                                    | PHP & Operators    |
+| `wpcs_loose_equal`                | WPCS: Loose equal ok                                  | Allow loose equality (==)                                                    | PHP & Operators    |
+| `wpcs_dev_functions`              | WPCS: Dev functions ok                                | Allow use of debugging functions like var_dump, die, exit.                   | PHP & Operators    |
+| `wpcs_commented_code`             | WPCS: Commented code ok                               | Allow commented out code blocks.                                             | PHP & Operators    |
+| `wpcs_unused_param`               | WPCS: Unused parameter ok                             | Allow unused function parameters.                                            | PHP & Operators    |
+| `wpcs_override`                   | WPCS: Override ok                                     | Allow override WordPress globals.                                            | WordPress Core     |
+| `wpcs_spelling`                   | WPCS: Spelling ok                                     | Allow incorrect 'WordPress' spelling in text.                                | WordPress Core     |
+| `wpcs_textdomain`                 | WPCS: I18n text domain ok                             | Allow translation functions without text domain.                             | WordPress Core     |
+| `wpcs_file_name`                  | WPCS: File name ok                                    | Allow non-standard file names.                                               | WordPress Core     |
+| `wpcs_precision_alignment`        | WPCS: Precision alignment ok                          | Ignore precision alignment.                                                  | WordPress Core     |
 
 ## Available Snippets
 
@@ -108,6 +154,16 @@ Type the snippet prefix in any PHP file and select the snippet from IntelliSense
     ```php
     // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
     $data = $_POST['data'];
+    ```
+
+- **WPCS: Input not validated nor sanitized ok**
+  - Prefix: `wpcs_input_nvs`
+  - Description: Allow use of input that is neither validated nor sanitized.
+  - Ignore Rule: `// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidatedNotSanitized`
+  - Example:
+    ```php
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidatedNotSanitized
+    $value = $_POST['value'];
     ```
 
 - **WPCS: XSS ok**
