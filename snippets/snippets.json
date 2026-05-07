@@ -74,6 +74,11 @@
     "body": "// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared",
     "description": "Allow unprepared SQL query."
   },
+  "WPCS: DB interpolated SQL ok": {
+    "prefix": "wpcs_db_interpolated_sql",
+    "body": "// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared",
+    "description": "Allow interpolated SQL queries not prepared."
+  },
   "WPCS: Prefix ok": {
     "prefix": "wpcs_prefix",
     "body": "// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals",
@@ -126,13 +131,18 @@
   },
   "WPCS: Commented code ok": {
     "prefix": "wpcs_commented_code",
-    "body": "// phpcs:ignore WordPress.PHP.CommentedOutCode",
+    "body": "// phpcs:ignore Squiz.PHP.CommentedOutCode.Found",
     "description": "Allow commented out code blocks."
   },
   "WPCS: Unused parameter ok": {
     "prefix": "wpcs_unused_param",
     "body": "// phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found",
     "description": "Allow unused function parameters."
+  },
+  "WPCS: Base64 encode ok": {
+    "prefix": "wpcs_base64_encode",
+    "body": "// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode",
+    "description": "Allow use of base64_encode() function."
   },
   "WPCS: Override ok": {
     "prefix": "wpcs_override",

@@ -10,7 +10,7 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
 
 ## Features
 
-- 32 pre-configured snippets covering common WPCS ignore rules
+- 34 pre-configured snippets covering common WPCS ignore rules
 - Groups snippets by category: Security, Database, Naming Conventions, PHP/Operators, WordPress Core
 - Zero setup required — install and start using immediately
 - Matches official WPCS whitelist flag syntax exactly
@@ -26,6 +26,12 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
   - `wpcs_spelling` → `WordPress.WP.CapitalPDangit.MisspelledInText`
 
 ### New Snippets
+
+**Available / Updated in 1.2.3:**
+
+- `wpcs_db_interpolated_sql` — Interpolated SQL not prepared
+- `wpcs_base64_encode` — Base64 encode function
+- `wpcs_commented_code` — Now uses `Squiz.PHP.CommentedOutCode.Found` (WordPressCS 3.0.0)
 
 **Available in 1.2.2:**
 
@@ -71,6 +77,7 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
 | `wpcs_db_preparedsqlplaceholders` | WPCS: DB preparedSQLPlaceholders replacement count ok | Allow preparedSQL placeholders vs replacements.                              | Database           |
 | `wpcs_db_slow_query`              | WPCS: DB slow query ok                                | Allow slow DB queries.                                                       | Database           |
 | `wpcs_db_unprepared_sql`          | WPCS: DB unprepared SQL ok                            | Allow unprepared SQL query.                                                  | Database           |
+| `wpcs_db_interpolated_sql`        | WPCS: DB interpolated SQL ok                          | Allow interpolated SQL queries not prepared.                                 | Database           |
 | `wpcs_prefix`                     | WPCS: Prefix ok                                       | Allow non-prefixed function/class/variable/constant in the global namespace. | Naming Conventions |
 | `wpcs_fn_name`                    | WPCS: Invalid function name ok                        | Allow invalid function name.                                                 | Naming Conventions |
 | `wpcs_method_name`                | WPCS: Method name ok                                  | Allow invalid class method names.                                            | Naming Conventions |
@@ -83,6 +90,7 @@ A Visual Studio Code extension that provides ready-to-use snippets for all [Word
 | `wpcs_dev_functions`              | WPCS: Dev functions ok                                | Allow use of debugging functions like var_dump, die, exit.                   | PHP & Operators    |
 | `wpcs_commented_code`             | WPCS: Commented code ok                               | Allow commented out code blocks.                                             | PHP & Operators    |
 | `wpcs_unused_param`               | WPCS: Unused parameter ok                             | Allow unused function parameters.                                            | PHP & Operators    |
+| `wpcs_base64_encode`              | WPCS: Base64 encode ok                                | Allow use of base64_encode() function.                                       | PHP & Operators    |
 | `wpcs_override`                   | WPCS: Override ok                                     | Allow override WordPress globals.                                            | WordPress Core     |
 | `wpcs_spelling`                   | WPCS: Spelling ok                                     | Allow incorrect 'WordPress' spelling in text.                                | WordPress Core     |
 | `wpcs_textdomain`                 | WPCS: I18n text domain ok                             | Allow translation functions without text domain.                             | WordPress Core     |
@@ -249,6 +257,16 @@ Type the snippet prefix in any PHP file and select the snippet from IntelliSense
     $result = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}options" );
     ```
 
+- **WPCS: DB interpolated SQL ok**
+  - Prefix: `wpcs_db_interpolated_sql`
+  - Description: Allow interpolated SQL queries not prepared.
+  - Ignore Rule: `// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared`
+  - Example:
+    ```php
+    // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+    $wpdb->query( "SELECT * FROM table WHERE id = $id" );
+    ```
+
 ### Naming Conventions
 
 - **WPCS: Prefix ok**
@@ -361,10 +379,10 @@ Type the snippet prefix in any PHP file and select the snippet from IntelliSense
 - **WPCS: Commented code ok**
   - Prefix: `wpcs_commented_code`
   - Description: Allow commented out code blocks.
-  - Ignore Rule: `// phpcs:ignore WordPress.PHP.CommentedOutCode`
+  - Ignore Rule: `// phpcs:ignore Squiz.PHP.CommentedOutCode.Found`
   - Example:
     ```php
-    // phpcs:ignore WordPress.PHP.CommentedOutCode
+    // phpcs:ignore Squiz.PHP.CommentedOutCode.Found
     // $old_code = 'deprecated';
     // $this->old_function();
     ```
@@ -378,6 +396,16 @@ Type the snippet prefix in any PHP file and select the snippet from IntelliSense
     function my_function( $param1, $unused_param ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
         return $param1;
     }
+    ```
+
+- **WPCS: Base64 encode ok**
+  - Prefix: `wpcs_base64_encode`
+  - Description: Allow use of base64_encode() function.
+  - Ignore Rule: `// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode`
+  - Example:
+    ```php
+    // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+    $encoded = base64_encode( $data );
     ```
 
 ### WordPress Core
