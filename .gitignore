@@ -1,4 +1,3 @@
-node_modules
 # =======================================================================
 # Git Ignore
 # =======================================================================
@@ -12,10 +11,14 @@ node_modules
 # Dependency Managers (Node)
 # ----------------------------------------------------------------------
 # Large binary folders and lockfile caches.
-node_modules/
 .pnp/
 .pnp.*
-*.vsix
+
+# Bun
+.bun/
+
+# Node
+node_modules/
 
 # Yarn 2+ Zero-Installs
 .yarn/*
@@ -24,24 +27,12 @@ node_modules/
 !.yarn/releases
 !.yarn/versions
 
-# Bun
-.bun/
-
 # ----------------------------------------------------------------------
 # Dependencies (Php)
 # ----------------------------------------------------------------------
 # Composer dependencies for WordPress / Laravel projects.
-vendor/
 languages/
-
-# ----------------------------------------------------------------------
-# Secrets & Credentials
-# ----------------------------------------------------------------------
-# WARNING: Do not remove these unless you have an encryption layer.
-.env
-.env.*
-!.env.example
-*.pem
+vendor/
 
 # ----------------------------------------------------------------------
 # Build & Compilation Output
@@ -58,53 +49,69 @@ out/
 next-env.d.ts
 
 # Bundler output
-dist/
 build/
+dist/
 
 # ----------------------------------------------------------------------
 # Cache Directories
 # ----------------------------------------------------------------------
-# Vite / Vitest
-.vite/
+# Esbuild / tsdown
+.cache/
+
+# Gulp
+.gulp/
+
+# Parcel
+.parcel-cache/
+
+# Phpcs
+.phpcs-cache
+
+# PostCSS
+.postcssrc
+
+# Rollup
+.rollup.cache/
 
 # Turborepo
 .turbo/
 
-# Esbuild / tsdown
-.cache/
+# Vite / Vitest
+.vite/
+.vitest/
+
+# Webpack
+.webpack/
 
 # Linter / Formatter caches
 .eslintcache
 .stylelintcache
 
-# Phpcs
-.phpcs-cache
-
 # ----------------------------------------------------------------------
 # Testing & Coverage
 # ----------------------------------------------------------------------
 # Coverage reports
-coverage/
 .nyc_output/
+coverage/
 
 # Jest
 .jest/
 
+# Playwright
+blob-report/
+playwright-report/
+test-results/
+
 # Vitest
 vitest-results/
-
-# Playwright
-test-results/
-playwright-report/
-blob-report/
 
 # ----------------------------------------------------------------------
 # Editor & Ide Settings
 # ----------------------------------------------------------------------
 # These are developer-specific, not project-specific.
 # .vscode/
-.vscode-insiders/
 .idea/
+.vscode-insiders/
 *.swp
 *.swo
 
@@ -112,17 +119,17 @@ blob-report/
 # System & Os Junk
 # ----------------------------------------------------------------------
 # macOS
-.DS_Store
 .AppleDouble
+.DS_Store
 .LSOverride
 .Spotlight-V100
 .Trashes
 
 # Windows
+$RECYCLE.BIN/
+Desktop.ini
 Thumbs.db
 ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
 
 # Linux
 # *~
@@ -130,22 +137,61 @@ $RECYCLE.BIN/
 # ----------------------------------------------------------------------
 # Deployment (Platform-Specific)
 # ----------------------------------------------------------------------
-# Vercel
-.vercel/
+# Cloudflare
+.wrangler/
 
 # Netlify
 .netlify/
 
-# Cloudflare
-.wrangler/
+# Vercel
+.vercel/
 
 # ----------------------------------------------------------------------
-# Seo & Generated Data
+# Log Files
 # ----------------------------------------------------------------------
-# Auto-generated files that don't need version control.
-/public/robots.txt
-/public/sitemap*
-*sitemap*.xml
+# Application, server, and framework logs across all project types.
+*.log
+
+# Node.js / npm / pnpm
+npm-debug.log*
+pnpm-debug.log*
+pnpm-error.log*
+
+# Yarn
+yarn-debug.log*
+yarn-error.log*
+
+# Bun
+bun-debug.log*
+bun-error.log*
+
+# Next.js / Nuxt
+.nuxt/
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+.tox/
+
+# PHP
+error_log
+php-error.log
+wp-content/debug.log
+wp-content/uploads/debug.log
+
+# Laravel / Symfony / Rails / Django
+storage/logs/
+log/
+logs/
+
+# PM2 / Forever / Process Managers
+*.log.*
+.pm2/
+
+# Syslog
+syslog/
+syslog.log
 
 # ----------------------------------------------------------------------
 # Temporary Files
@@ -158,7 +204,10 @@ tmp/
 # Ai Coding Tools
 # ----------------------------------------------------------------------
 # Local state, conversation history, and caches from AI agents.
+.agent/
+.agents/
 .claude/
+.cline/
 .codex/
 .copilot/
 .deepseek/
@@ -172,6 +221,23 @@ tmp/
 .qoder/
 .qwen/
 .vibe/
+
+# ----------------------------------------------------------------------
+# Seo & Generated Data
+# ----------------------------------------------------------------------
+# Auto-generated files that don't need version control.
+/public/robots.txt
+/public/sitemap*
+*sitemap*.xml
+
+# ----------------------------------------------------------------------
+# Environment & Secrets
+# ----------------------------------------------------------------------
+# WARNING: Do not remove these unless you have an encryption layer.
+.env
+.env.*
+!.env.example
+*.pem
 
 # ----------------------------------------------------------------------
 # Ai Instruction Files (Track These)
